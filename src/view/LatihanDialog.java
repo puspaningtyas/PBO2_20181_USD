@@ -7,6 +7,7 @@ package view;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -15,6 +16,7 @@ import javax.swing.JLabel;
 public class LatihanDialog extends JDialog {
 
     private JLabel namaLabel;
+    private JTextField namaText;
 
     public LatihanDialog() {
         init();
