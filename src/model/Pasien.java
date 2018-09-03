@@ -20,6 +20,9 @@ public class Pasien {
         this.nama = nama;
     }
 
+    public Pasien() {
+    }
+
     /**
      * @return the nama
      */
