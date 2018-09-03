@@ -15,6 +15,7 @@ import java.util.Date;
 public class Pasien {
     private String nama;
     private Date tanggalLahir;
+    private String alamat;
 
     public Pasien(String nama) {
         this.nama = nama;
@@ -64,5 +65,19 @@ public class Pasien {
     public int getUsia(){
         Date today = new Date();
         return today.getYear() - tanggalLahir.getYear();
+    }
+
+    /**
+     * @return the alamat
+     */
+    public String getAlamat() {
+        return alamat;
+    }
+
+    /**
+     * @param alamat the alamat to set
+     */
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
     }
 }
