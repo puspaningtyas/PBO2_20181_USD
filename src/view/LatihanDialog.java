@@ -5,13 +5,14 @@
  */
 package view;
 
+import java.awt.Font;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
  *
- * @author user only
+ * @author Puspaningtyas
  */
 public class LatihanDialog extends JDialog {
 
@@ -27,11 +28,16 @@ public class LatihanDialog extends JDialog {
         init();
     }
 
+    /**
+     * Fungsi inisialisasi atribut
+     */
     public void init() {
         this.setLayout(null);
-        
+        // label nama
         namaLabel = new JLabel("Nama");
-        namaLabel.setBounds(50, 250, 50, 10);
+        // pengaturan posisi label : posisi 50,250, lebar 50, tinggi 10
+        namaLabel.setBounds(50, 250, 250, 20);
+        namaLabel.setFont(new Font(null,Font.PLAIN,18));
         this.add(namaLabel);
     }
 }
