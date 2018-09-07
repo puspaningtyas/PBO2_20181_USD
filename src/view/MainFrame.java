@@ -14,7 +14,7 @@ import javax.swing.JMenuItem;
 
 /**
  *
- * @author jarkom
+ * @author Puspaningtyas
  */
 public class MainFrame extends JFrame {
 
