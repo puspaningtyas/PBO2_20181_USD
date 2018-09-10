@@ -5,19 +5,31 @@
  */
 package view;
 
+import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /**
  *
  * @author Puspaningtyas
  */
-public class LatihanDialog extends JDialog {
+public class LatihanDialog extends JDialog implements ActionListener {
 
     private JLabel namaLabel;
     private JTextField namaText;
+    
+    private JLabel jenisKelaminLabel;
+    private JRadioButton lelakiRadioButton;
+    private JRadioButton perempuanRadioButton;
 
     public LatihanDialog() {
         init();
@@ -28,6 +40,13 @@ public class LatihanDialog extends JDialog {
         init();
     }
 
+    public LatihanDialog(Frame owner, String title) {
+        super(owner, title);
+        init();
+    }
+    
+    
+
     /**
      * Fungsi inisialisasi atribut
      */
@@ -36,8 +55,47 @@ public class LatihanDialog extends JDialog {
         // label nama
         namaLabel = new JLabel("Nama");
         // pengaturan posisi label : posisi 50,250, lebar 50, tinggi 10
-        namaLabel.setBounds(50, 250, 250, 20);
+        namaLabel.setBounds(50, 80, 150, 20);
         namaLabel.setFont(new Font(null,Font.PLAIN,18));
         this.add(namaLabel);
+        
+        namaText = new JTextField(50);
+        namaText.setBounds(150, 80, 150, 20);
+        namaText.setFont(new Font(null,Font.PLAIN,18));
+        this.add(namaText);
+        
+        jenisKelaminLabel = new JLabel("Kelamin");
+        // pengaturan posisi label : posisi 50,250, lebar 50, tinggi 10
+        jenisKelaminLabel.setBounds(50, 120, 150, 20);
+        jenisKelaminLabel.setFont(new Font(null,Font.PLAIN,18));
+        this.add(jenisKelaminLabel);
+        
+        lelakiRadioButton = new JRadioButton("Lelaki");
+        lelakiRadioButton.setBounds(150, 120, 250, 20);
+        lelakiRadioButton.setFont(new Font(null,Font.PLAIN,18));
+        this.add(lelakiRadioButton);
+        
+        perempuanRadioButton = new JRadioButton("perempuan");
+        perempuanRadioButton.setBounds(150, 150, 250, 20);
+        perempuanRadioButton.setFont(new Font(null,Font.PLAIN,18));
+        perempuanRadioButton.setBackground(Color.red);
+        this.add(perempuanRadioButton);
+        // buat grup button
+        ButtonGroup kelaminButtonGroup = new ButtonGroup();
+        kelaminButtonGroup.add(lelakiRadioButton);
+        kelaminButtonGroup.add(perempuanRadioButton);
+        //atur background warna putih
+        Container content = this.getContentPane();
+        content.setBackground(Color.white);
+        
+        // tambah action
+        namaText.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==namaText){
+            JOptionPane.showMessageDialog(null, namaText.getText());
+        }
     }
 }
