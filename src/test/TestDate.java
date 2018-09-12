@@ -17,6 +17,7 @@ public class TestDate {
     public static void main(String[] args) {
         // Instantiate a Date object
       Date date = new Date();
+      
       SimpleDateFormat ft = 
       new SimpleDateFormat ("yyyyMMdd");
       // display time and date using toString()
