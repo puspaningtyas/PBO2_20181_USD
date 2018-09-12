@@ -6,6 +6,7 @@
 
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,8 +14,23 @@ import java.util.Date;
  * @author admin
  */
 public class Pasien {
+
+    public static void tambahPasienBaru(Pasien test) {
+        // listing tambah elemen baru
+        
+    }
+
+    public static Pasien cariPasien(String string) {
+        // listing cari elemen
+        
+        return null;
+    }
+    
     private String nama;
     private Date tanggalLahir;
+    
+    public static ArrayList<Pasien> daftarPasienKlinik = 
+            new ArrayList<Pasien>();
 
     public Pasien(String nama) {
         this.nama = nama;
