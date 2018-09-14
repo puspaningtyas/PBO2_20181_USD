@@ -6,15 +6,18 @@
 package view;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import model.Pasien;
 
 /**
  *
  * @author Puspaningtyas
  */
-public class LatihanDialog extends JDialog {
+public class LatihanDialog extends JDialog implements ActionListener {
 
     private JLabel namaLabel;
     private JTextField namaText;
@@ -39,5 +42,17 @@ public class LatihanDialog extends JDialog {
         namaLabel.setBounds(50, 250, 250, 20);
         namaLabel.setFont(new Font(null,Font.PLAIN,18));
         this.add(namaLabel);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==tambahButton){
+            Pasien baru = new Pasien();
+            baru.setNama(namaText.getText());
+            baru.setAlamat(alamatText.getText());
+            
+            Pasien.tambahPasienBaru(baru);
+            
+        }
     }
 }

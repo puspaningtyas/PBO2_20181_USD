@@ -54,6 +54,7 @@ public class MainFrame extends JFrame implements ActionListener {
             System.exit(0);
         }
         if (e.getSource() == tambahPasienMenuItem) {
+            // nantinya diganti TambahPasienBaruDialog
             LatihanDialog test = new LatihanDialog();
             test.setSize(300, 400);
             test.setVisible(true);
