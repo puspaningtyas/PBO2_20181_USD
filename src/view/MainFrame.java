@@ -42,12 +42,17 @@ public class MainFrame extends JFrame implements ActionListener{
         fileMenu.add(exitMenuItem);
         menuBar.add(fileMenu);
         
+        exitMenuItem.addActionListener(this);
+        
         this.setJMenuBar(menuBar);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        if(e.getSource()==exitMenuItem)
+        {
+            System.exit(0);
+        }
     }
 
 }
