@@ -7,6 +7,8 @@ package view;
 
 import java.awt.HeadlessException;
 import java.awt.MenuBar;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -16,11 +18,12 @@ import javax.swing.JMenuItem;
  *
  * @author Puspaningtyas
  */
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements ActionListener{
 
     private JMenuBar menuBar;
     private JMenu fileMenu;
     private JMenuItem exitMenuItem;
+    private JMenuItem tambahPasienMenuItem;
 
     public MainFrame() throws HeadlessException {
         init();
@@ -34,10 +37,17 @@ public class MainFrame extends JFrame {
         // buat menu
         fileMenu = new JMenu("File");
         exitMenuItem = new JMenuItem("exit");
+        tambahPasienMenuItem = new JMenuItem("TambahPasien");
+        fileMenu.add(tambahPasienMenuItem);
         fileMenu.add(exitMenuItem);
         menuBar.add(fileMenu);
         
         this.setJMenuBar(menuBar);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
     }
 
 }
