@@ -5,16 +5,16 @@
  */
 package testView;
 
-import view.LatihanDialog;
-import view.MainFrame;
+import view.TambahPasienDialog;
+import view.FrameUtama;
 
 /**
  *
  * @author jarkom
  */
-public class TestMainFrame {
+public class TestFrameUtama {
     public static void main(String[] args) {
-        MainFrame test = new MainFrame();
+        FrameUtama test = new FrameUtama();
         test.setSize(300, 400);
         test.setVisible(true);
     }

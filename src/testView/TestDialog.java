@@ -5,7 +5,7 @@
  */
 package testView;
 
-import view.LatihanDialog;
+import view.TambahPasienDialog;
 
 /**
  *
@@ -13,7 +13,7 @@ import view.LatihanDialog;
  */
 public class TestDialog {
     public static void main(String[] args) {
-        LatihanDialog test = new LatihanDialog();
+        TambahPasienDialog test = new TambahPasienDialog();
         test.setSize(300, 400);
         test.setVisible(true);
     }

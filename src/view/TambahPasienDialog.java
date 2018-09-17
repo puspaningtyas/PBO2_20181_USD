@@ -12,17 +12,19 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import model.Pasien;
 
 /**
  *
  * @author Puspaningtyas
  */
-public class LatihanDialog extends JDialog implements ActionListener {
+public class TambahPasienDialog extends JDialog implements ActionListener {
 
     private JLabel namaLabel;
     private JTextField namaText;
@@ -30,17 +32,20 @@ public class LatihanDialog extends JDialog implements ActionListener {
     private JLabel jenisKelaminLabel;
     private JRadioButton lelakiRadioButton;
     private JRadioButton perempuanRadioButton;
+    private JLabel noRMLabel;
+    private JTextField noRMText;
+    private JButton tambahButton;
 
-    public LatihanDialog() {
+    public TambahPasienDialog() {
         init();
     }
 
-    public LatihanDialog(String title) {
+    public TambahPasienDialog(String title) {
         this.setTitle(title);
         init();
     }
 
-    public LatihanDialog(Frame owner, String title) {
+    public TambahPasienDialog(Frame owner, String title) {
         super(owner, title);
         init();
     }
@@ -52,6 +57,18 @@ public class LatihanDialog extends JDialog implements ActionListener {
      */
     public void init() {
         this.setLayout(null);
+        // label nama
+        noRMLabel = new JLabel("NoRM");
+        // pengaturan posisi label : posisi 50,250, lebar 50, tinggi 10
+        noRMLabel.setBounds(50, 50, 150, 20);
+        noRMLabel.setFont(new Font(null,Font.PLAIN,18));
+        this.add(noRMLabel);
+        
+        noRMText = new JTextField(50);
+        noRMText.setBounds(150, 50, 150, 20);
+        noRMText.setFont(new Font(null,Font.PLAIN,18));
+        this.add(noRMText);
+        
         // label nama
         namaLabel = new JLabel("Nama");
         // pengaturan posisi label : posisi 50,250, lebar 50, tinggi 10
@@ -90,12 +107,24 @@ public class LatihanDialog extends JDialog implements ActionListener {
         
         // tambah action
         namaText.addActionListener(this);
+        
+        tambahButton = new JButton("Tambah");
+        tambahButton.setBounds(150, 200, 100, 30);
+        this.add(tambahButton);
+        tambahButton.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==namaText){
             JOptionPane.showMessageDialog(null, namaText.getText());
+        }
+        if(e.getSource()==tambahButton){
+            Pasien baru = new Pasien();
+            baru.setNoRM(noRMText.getText());
+            baru.setNama(namaText.getText());
+            Pasien.tambahPasien(baru);
+            this.dispose();
         }
     }
 }
