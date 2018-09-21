@@ -65,19 +65,14 @@ public class Pasien {
     }
 
     
-    /**
-     * 
-     * @param tahun
-     * @param bulan
-     * @param tanggal 
-     */
-    public void setTanggalLahir(int tahun, int bulan, int tanggal) {
-        setTanggalLahir(new Date(tahun-1900,bulan-1,tanggal));
-    }
-    
     public int getUsia(){
         Date today = new Date();
-        return today.getYear() - getTanggalLahir().getYear();
+        Date tglLahir = new Date(
+                getTahunLahir()-1900, // tahun lahir
+                getBulanLahir()-1, // bulan lahir
+                getTanggalLahir() // tanggal lahir
+        );
+        return today.getYear() - tglLahir.getYear();
     }
 
     /**
@@ -169,5 +164,12 @@ public class Pasien {
      */
     public void setTahunLahir(int tahunLahir) {
         this.tahunLahir = tahunLahir;
+    }
+
+    /**
+     * @return the tanggalLahir
+     */
+    public int getTanggalLahir() {
+        return tanggalLahir;
     }
 }

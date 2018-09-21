@@ -15,7 +15,9 @@ import model.Pasien;
 public class TestPasien1 {
     public static void main(String[] args) {
         Pasien puspa = new Pasien("Puspa");
-        puspa.setTanggalLahir(1974, 1, 12);
+        puspa.setTanggalLahir(12);
+        puspa.setBulanLahir(1);
+        puspa.setTahunLahir(1974);
         System.out.println("Umur = "+puspa.getUsia());
     }
     
