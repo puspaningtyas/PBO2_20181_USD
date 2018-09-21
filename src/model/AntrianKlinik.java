@@ -28,7 +28,7 @@ public class AntrianKlinik {
         antrian.setTahunAntrian(tahun);
         antrian.setKlinik(klinik);
         // cari antrian dalam list daftarAntri
-        if (cariAntrian(tanggal, bulan, tahun, klinik) == null) {
+        if (cariAntrian(tanggal, bulan, tahun, klinik) <0) {
             // tambah dalam list antrian
             daftarAntrian.add(antrian);
         } else {
@@ -36,12 +36,12 @@ public class AntrianKlinik {
         }
     }
 
-    public static AntrianKlinik cariAntrian(
+    public static int cariAntrian(
             int tanggal,
             int bulan,
             int tahun,
             Klinik klinik) {
-        return null;
+        return -1; // index list
     }
 
     public static void daftarPasien(
