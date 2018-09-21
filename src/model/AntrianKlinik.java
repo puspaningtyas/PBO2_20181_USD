@@ -18,52 +18,81 @@ public class AntrianKlinik {
     private int tahunAntrian;
     private Klinik klinik;
     
-    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+    private ArrayList<Pasien> daftarPasienAntri = new ArrayList<Pasien>();
 
     public void mendaftar(Pasien pasien){
         getDaftarPasien().add(pasien);
     }
     
+    
+    /**
+     * @return the daftarPasienAntri
+     */
+    public ArrayList<Pasien> getDaftarPasien() {
+        return daftarPasienAntri;
+    }
+
+    /**
+     * @param daftarPasien the daftarPasienAntri to set
+     */
+    public void setDaftarPasien(ArrayList<Pasien> daftarPasien) {
+        this.daftarPasienAntri = daftarPasien;
+    }
+
     /**
      * @return the tanggalAntrian
      */
-    public Date getTanggalAntrian() {
+    public int getTanggalAntrian() {
         return tanggalAntrian;
     }
 
     /**
      * @param tanggalAntrian the tanggalAntrian to set
      */
-    public void setTanggalAntrian(Date tanggalAntrian) {
+    public void setTanggalAntrian(int tanggalAntrian) {
         this.tanggalAntrian = tanggalAntrian;
     }
 
     /**
-     * @return the namaKlinik
+     * @return the bulanAntrian
      */
-    public String getNamaKlinik() {
-        return namaKlinik;
+    public int getBulanAntrian() {
+        return bulanAntrian;
     }
 
     /**
-     * @param namaKlinik the namaKlinik to set
+     * @param bulanAntrian the bulanAntrian to set
      */
-    public void setNamaKlinik(String namaKlinik) {
-        this.namaKlinik = namaKlinik;
+    public void setBulanAntrian(int bulanAntrian) {
+        this.bulanAntrian = bulanAntrian;
     }
 
     /**
-     * @return the daftarPasien
+     * @return the tahunAntrian
      */
-    public ArrayList<Pasien> getDaftarPasien() {
-        return daftarPasien;
+    public int getTahunAntrian() {
+        return tahunAntrian;
     }
 
     /**
-     * @param daftarPasien the daftarPasien to set
+     * @param tahunAntrian the tahunAntrian to set
      */
-    public void setDaftarPasien(ArrayList<Pasien> daftarPasien) {
-        this.daftarPasien = daftarPasien;
+    public void setTahunAntrian(int tahunAntrian) {
+        this.tahunAntrian = tahunAntrian;
+    }
+
+    /**
+     * @return the klinik
+     */
+    public Klinik getKlinik() {
+        return klinik;
+    }
+
+    /**
+     * @param klinik the klinik to set
+     */
+    public void setKlinik(Klinik klinik) {
+        this.klinik = klinik;
     }
     
     
