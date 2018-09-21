@@ -32,7 +32,8 @@ public class TestAntrianKlinik2 {
                 2018, 
                 new Klinik("001","anak"));
         for (int i = 0; i < AntrianKlinik.daftarAntrian.size(); i++) {
-            System.out.println();
+            System.out.println(AntrianKlinik.
+                    daftarAntrian.get(i));
         }
     }
     
