@@ -13,13 +13,17 @@ import java.util.Date;
  * @author user only
  */
 public class AntrianKlinik {
+    
+    public static ArrayList<AntrianKlinik> daftarAntrian =
+            new ArrayList<AntrianKlinik>();
+    
     private int tanggalAntrian;
     private int bulanAntrian;
     private int tahunAntrian;
     private Klinik klinik;
     
     private ArrayList<Pasien> daftarPasienAntri = new ArrayList<Pasien>();
-
+    
     public void mendaftar(Pasien pasien){
         getDaftarPasien().add(pasien);
     }
