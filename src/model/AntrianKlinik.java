@@ -43,6 +43,20 @@ public class AntrianKlinik {
             Klinik klinik) {
         return null;
     }
+
+    public static void daftarPasien(
+            Pasien pasien,
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        // cari antrian ada apa tidak
+        // jika ada
+        // panggil fungsi mendaftar dari objek antrian
+        // jika tidak ada
+        // buat antrian baru, panggil gungsi daftar pasien dari objek antrian
+        // tambahkan objek antrian baru ke list daftar antrian
+    }
     private int tanggalAntrian;
     private int bulanAntrian;
     private int tahunAntrian;
@@ -60,7 +74,6 @@ public class AntrianKlinik {
         this.klinik = klinik;
     }
 
-    
     public void mendaftar(Pasien pasien) {
         getDaftarPasien().add(pasien);
     }
@@ -134,13 +147,13 @@ public class AntrianKlinik {
     public void setKlinik(Klinik klinik) {
         this.klinik = klinik;
     }
-    
-    public String toString(){
-        return String.valueOf(tahunAntrian)+
-                String.valueOf(bulanAntrian)+
-                String.valueOf(tanggalAntrian)+
-                klinik.getIdKlinik()+
-                klinik.getNamaKlinik();
+
+    public String toString() {
+        return String.valueOf(tahunAntrian)
+                + String.valueOf(bulanAntrian)
+                + String.valueOf(tanggalAntrian)
+                + klinik.getIdKlinik()
+                + klinik.getNamaKlinik();
     }
 
 }

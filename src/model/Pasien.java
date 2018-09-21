@@ -172,4 +172,8 @@ public class Pasien {
     public int getTanggalLahir() {
         return tanggalLahir;
     }
+    
+    public String toString(){
+        return nama+","+alamat;
+    }
 }
