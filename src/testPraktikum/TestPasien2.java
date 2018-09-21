@@ -23,9 +23,9 @@ public class TestPasien2 {
         Pasien.tambahPasien(test3);
         Pasien.tambahPasien(test4);
         
-        for (int i = 0; i < Pasien.daftarPasien.size(); i++) {
-            System.out.println("RM: "+Pasien.daftarPasien.get(i).getNoRM()
-                    +","+Pasien.daftarPasien.get(i).getNama());
+        for (int i = 0; i < Pasien.getDaftarPasien().size(); i++) {
+            System.out.println("RM: "+Pasien.getDaftarPasien().get(i).getNoRM()
+                    +","+Pasien.getDaftarPasien().get(i).getNama());
         }
         
         System.out.println("Cari = "+Pasien.cariPasien("12345").getNama());

@@ -15,23 +15,25 @@ import java.util.Date;
  */
 public class Pasien {
     
-    public static ArrayList<Pasien> daftarPasien= 
+    private static ArrayList<Pasien> daftarPasien= 
             new ArrayList<Pasien>();
     
     public static void tambahPasien(Pasien pasien){
-        daftarPasien.add(pasien);
+        getDaftarPasien().add(pasien);
     }
     
     public static Pasien cariPasien(String noRM){
-        for (int i = 0; i < daftarPasien.size(); i++) {
-            if(daftarPasien.get(i).noRM.equalsIgnoreCase(noRM))
-                return daftarPasien.get(i);
+        for (int i = 0; i < getDaftarPasien().size(); i++) {
+            if(getDaftarPasien().get(i).getNoRM().equalsIgnoreCase(noRM))
+                return getDaftarPasien().get(i);
         }
         return null;
     }
     
     private String nama;
-    private Date tanggalLahir;
+    private int tanggalLahir;
+    private int bulanLahir;
+    private int tahunLahir;
     private String alamat;
     private String noRM;
     private String nik;
@@ -62,19 +64,6 @@ public class Pasien {
         this.nama = nama;
     }
 
-    /**
-     * @return the tanggalLahir
-     */
-    public Date getTanggalLahir() {
-        return tanggalLahir;
-    }
-
-    /**
-     * @param tanggalLahir the tanggalLahir to set
-     */
-    public void setTanggalLahir(Date tanggalLahir) {
-        this.tanggalLahir = tanggalLahir;
-    }
     
     /**
      * 
@@ -131,5 +120,54 @@ public class Pasien {
      */
     public void setNik(String nik) {
         this.nik = nik;
+    }
+
+    /**
+     * @return the daftarPasien
+     */
+    public static ArrayList<Pasien> getDaftarPasien() {
+        return daftarPasien;
+    }
+
+    /**
+     * @param aDaftarPasien the daftarPasien to set
+     */
+    public static void setDaftarPasien(ArrayList<Pasien> aDaftarPasien) {
+        daftarPasien = aDaftarPasien;
+    }
+
+    /**
+     * @param tanggalLahir the tanggalLahir to set
+     */
+    public void setTanggalLahir(int tanggalLahir) {
+        this.tanggalLahir = tanggalLahir;
+    }
+
+    /**
+     * @return the bulanLahir
+     */
+    public int getBulanLahir() {
+        return bulanLahir;
+    }
+
+    /**
+     * @param bulanLahir the bulanLahir to set
+     */
+    public void setBulanLahir(int bulanLahir) {
+        this.bulanLahir = bulanLahir;
+    }
+
+    /**
+     * @return the tahunLahir
+     */
+    public int getTahunLahir() {
+        return tahunLahir;
+    }
+
+    /**
+     * @param tahunLahir the tahunLahir to set
+     */
+    public void setTahunLahir(int tahunLahir) {
+        this.tahunLahir = tahunLahir;
     }
 }
