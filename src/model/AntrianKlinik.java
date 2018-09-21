@@ -13,8 +13,10 @@ import java.util.Date;
  * @author user only
  */
 public class AntrianKlinik {
-    private Date tanggalAntrian;
-    private String namaKlinik;
+    private int tanggalAntrian;
+    private int bulanAntrian;
+    private int tahunAntrian;
+    private Klinik klinik;
     
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
 
