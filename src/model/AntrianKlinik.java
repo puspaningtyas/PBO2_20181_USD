@@ -13,22 +13,58 @@ import java.util.Date;
  * @author user only
  */
 public class AntrianKlinik {
-    
-    public static ArrayList<AntrianKlinik> daftarAntrian =
-            new ArrayList<AntrianKlinik>();
-    
+
+    public static ArrayList<AntrianKlinik> daftarAntrian
+            = new ArrayList<AntrianKlinik>();
+
+    public static void buatAntrian(
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        AntrianKlinik antrian = new AntrianKlinik();
+        antrian.setTanggalAntrian(tanggal);
+        antrian.setBulanAntrian(bulan);
+        antrian.setTahunAntrian(tahun);
+        antrian.setKlinik(klinik);
+        // cari antrian dalam list daftarAntri
+        if (cariAntrian(tanggal, bulan, tahun, klinik) == null) {
+            // tambah dalam list antrian
+            daftarAntrian.add(antrian);
+        } else {
+            System.out.println("antrian sudah ada");
+        }
+    }
+
+    public static AntrianKlinik cariAntrian(
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        return null;
+    }
     private int tanggalAntrian;
     private int bulanAntrian;
     private int tahunAntrian;
     private Klinik klinik;
-    
+
     private ArrayList<Pasien> daftarPasienAntri = new ArrayList<Pasien>();
+
+    public AntrianKlinik() {
+    }
+
+    public AntrianKlinik(int tanggalAntrian, int bulanAntrian, int tahunAntrian, Klinik klinik) {
+        this.tanggalAntrian = tanggalAntrian;
+        this.bulanAntrian = bulanAntrian;
+        this.tahunAntrian = tahunAntrian;
+        this.klinik = klinik;
+    }
+
     
-    public void mendaftar(Pasien pasien){
+    public void mendaftar(Pasien pasien) {
         getDaftarPasien().add(pasien);
     }
-    
-    
+
     /**
      * @return the daftarPasienAntri
      */
@@ -99,6 +135,12 @@ public class AntrianKlinik {
         this.klinik = klinik;
     }
     
-    
-    
+    public String toString(){
+        return String.valueOf(tahunAntrian)+
+                String.valueOf(bulanAntrian)+
+                String.valueOf(tanggalAntrian)+
+                klinik.getIdKlinik()+
+                klinik.getNamaKlinik();
+    }
+
 }
