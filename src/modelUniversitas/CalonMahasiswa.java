@@ -10,29 +10,29 @@ package modelUniversitas;
  * @author user only
  */
 public class CalonMahasiswa {
-    private String noDaftar;
+    private String nomorNIK;
     private String nama;
 
     public CalonMahasiswa() {
     }
 
-    public CalonMahasiswa(String noDaftar, String nama) {
-        this.noDaftar = noDaftar;
+    public CalonMahasiswa(String noNIK, String nama) {
+        this.nomorNIK = noNIK;
         this.nama = nama;
     }
 
     /**
-     * @return the noDaftar
+     * @return the nomorNIK
      */
-    public String getNoDaftar() {
-        return noDaftar;
+    public String getNomorNIK() {
+        return nomorNIK;
     }
 
     /**
-     * @param noDaftar the noDaftar to set
+     * @param noDaftar the nomorNIK to set
      */
-    public void setNoDaftar(String noDaftar) {
-        this.noDaftar = noDaftar;
+    public void setNomorNIK(String noNIK) {
+        this.nomorNIK = noNIK;
     }
 
     /**

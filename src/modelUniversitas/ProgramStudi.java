@@ -6,6 +6,7 @@
 package modelUniversitas;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,9 +16,27 @@ public class ProgramStudi {
 
     private String kode;
     private String nama;
-    
-    private ArrayList<CalonMahasiswa> daftarCalonMahasiswa=
-            new ArrayList<CalonMahasiswa>();
+
+    private ArrayList<CalonMahasiswa> daftarCalonMahasiswa
+            = new ArrayList<CalonMahasiswa>();
+
+    public int cariCalonMahasiswa(String noNIK) {
+        for (int i = 0; i < daftarCalonMahasiswa.size(); i++) {
+            if (noNIK.equalsIgnoreCase(
+                    daftarCalonMahasiswa.get(i).getNomorNIK())) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void mendaftar(CalonMahasiswa calon) {
+        if (cariCalonMahasiswa(calon.getNomorNIK())  == -1) {
+            daftarCalonMahasiswa.add(calon);
+        } else{
+           JOptionPane.showMessageDialog(null, "Calon Sudah Ada");
+        }
+    }
 
     public ProgramStudi() {
     }
@@ -55,5 +74,4 @@ public class ProgramStudi {
         this.nama = nama;
     }
 
-    
 }
