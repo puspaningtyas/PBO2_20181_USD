@@ -6,6 +6,7 @@
 
 package model;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,6 +29,18 @@ public class Pasien {
                 return getDaftarPasien().get(i);
         }
         return null;
+    }
+
+    public static void tambahPasienBaru(Pasien test) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void simpanDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void bacaDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     private String nama;
@@ -174,6 +187,6 @@ public class Pasien {
     }
     
     public String toString(){
-        return nama+","+alamat;
+        return nama+"\t"+alamat+"\n";
     }
 }
