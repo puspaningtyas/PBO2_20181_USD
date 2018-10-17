@@ -15,10 +15,12 @@ import model.Pasien;
 public class TestStream {
     public static void main(String[] args) {
         Pasien test = new Pasien();
+        test.setNoRM("001");
         test.setNama("puspa");
         test.setAlamat("klaten");
         
         Pasien test1 = new Pasien();
+        test1.setNoRM("002");
         test1.setNama("adi");
         test1.setAlamat("klaten");
         

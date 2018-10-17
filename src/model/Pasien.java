@@ -7,8 +7,13 @@
 package model;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +41,18 @@ public class Pasien {
     }
 
     public static void simpanDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            for (int i = 0; i < daftarPasien.size(); i++) {
+                String data = daftarPasien.get(i).toString();
+                fos.write(data.getBytes());
+            }
+            fos.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static void bacaDaftarPasien(File file) {
@@ -187,6 +203,6 @@ public class Pasien {
     }
     
     public String toString(){
-        return nama+"\t"+alamat+"\n";
+        return noRM+"\t"+nama+"\t"+alamat+"\n";
     }
 }
