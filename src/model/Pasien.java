@@ -37,7 +37,7 @@ public class Pasien {
     }
 
     public static void tambahPasienBaru(Pasien test) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        daftarPasien.add(test);
     }
 
     public static void simpanDaftarPasien(File file) {
