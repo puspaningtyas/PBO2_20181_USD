@@ -17,15 +17,20 @@ import java.util.logging.Logger;
  * @author admin
  */
 public class TestStreaming1 {
+
     public static void main(String[] args) {
         FileInputStream fis = null;
         try {
             File file = new File("test.txt"); // siapkan file sumber
-            String hasilBaca="";
+            String hasilBaca = "";
             fis = new FileInputStream(file);
             int dataInt;
-            while((dataInt=fis.read()) !=-1){
-                hasilBaca = hasilBaca + (char) dataInt;
+            while ((dataInt = fis.read()) != -1) {
+                if ((char) dataInt != '\n') {
+                    hasilBaca = hasilBaca + (char) dataInt;
+                } else {
+                    System.out.println("akhir kalimat");
+                }
             }
             System.out.println(hasilBaca);
         } catch (FileNotFoundException ex) {
@@ -39,6 +44,6 @@ public class TestStreaming1 {
                 Logger.getLogger(TestStreaming1.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
     }
 }

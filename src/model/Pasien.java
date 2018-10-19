@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class Pasien {
     
-    private static ArrayList<Pasien> daftarPasien= 
+    public static ArrayList<Pasien> daftarPasien= 
             new ArrayList<Pasien>();
     
     public static void tambahPasien(Pasien pasien){
