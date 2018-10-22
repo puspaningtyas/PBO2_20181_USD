@@ -5,11 +5,13 @@
  */
 package modelUniversitas;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user only
  */
-public class Mahasiswa {
+public class Mahasiswa implements Serializable{
     private String nim;
     private String nama;
 
@@ -49,5 +51,8 @@ public class Mahasiswa {
         this.nama = nama;
     }
     
+    public String toString(){
+        return nama+"\t"+nim+"\n";
+    }
     
 }
