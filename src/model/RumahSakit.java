@@ -92,6 +92,11 @@ public class RumahSakit {
         }
     }
 
+    public void simpanObjekDaftarPasien(File file) {
+    }
+    
+    public void bacaObjekDaftarPasien(File file) {
+    }
     /**
      * @return the daftarPasien
      */
