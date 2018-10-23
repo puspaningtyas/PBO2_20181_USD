@@ -52,7 +52,12 @@ public class Mahasiswa implements Serializable{
     }
     
     public String toString(){
-        return nama+"\t"+nim+"\n";
+        return nim+"\t"+nama+"\n";
     }
     
+    public void toMahasiswa(String mahasiswa){
+        String dataMahasiswa[] = mahasiswa.split("\t");
+        this.setNim(dataMahasiswa[0]);
+        this.setNama(dataMahasiswa[1]);
+    } 
 }

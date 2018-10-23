@@ -6,6 +6,7 @@
 package testPraktikum;
 
 import model.Pasien;
+import model.RumahSakit;
 
 /**
  *
@@ -17,17 +18,18 @@ public class TestPasien2 {
         Pasien test2 = new Pasien("12346","Puspa1");
         Pasien test3 = new Pasien("12347","Puspa2");
         Pasien test4 = new Pasien("12348","Puspa3");
+        RumahSakit rs = new RumahSakit("Panti Rapih","Yogyakarta");
         
-        Pasien.tambahPasien(test1);
-        Pasien.tambahPasien(test2);
-        Pasien.tambahPasien(test3);
-        Pasien.tambahPasien(test4);
+        rs.tambahPasien(test1);
+        rs.tambahPasien(test2);
+        rs.tambahPasien(test3);
+        rs.tambahPasien(test4);
         
-        for (int i = 0; i < Pasien.getDaftarPasien().size(); i++) {
-            System.out.println("RM: "+Pasien.getDaftarPasien().get(i).getNoRM()
-                    +","+Pasien.getDaftarPasien().get(i).getNama());
+        for (int i = 0; i < rs.getDaftarPasien().size(); i++) {
+            System.out.println("RM: "+rs.getDaftarPasien().get(i).getNoRM()
+                    +","+rs.getDaftarPasien().get(i).getNama());
         }
         
-        System.out.println("Cari = "+Pasien.cariPasien("12345").getNama());
+        System.out.println("Cari = "+rs.cariPasien("12345").getNama());
     }
 }

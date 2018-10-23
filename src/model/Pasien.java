@@ -22,69 +22,6 @@ import java.util.logging.Logger;
  */
 public class Pasien {
     
-    public static ArrayList<Pasien> daftarPasien= 
-            new ArrayList<Pasien>();
-    
-    public static void tambahPasien(Pasien pasien){
-        getDaftarPasien().add(pasien);
-    }
-    
-    public static Pasien cariPasien(String noRM){
-        for (int i = 0; i < getDaftarPasien().size(); i++) {
-            if(getDaftarPasien().get(i).getNoRM().equalsIgnoreCase(noRM))
-                return getDaftarPasien().get(i);
-        }
-        return null;
-    }
-
-    public static void tambahPasienBaru(Pasien test) {
-        daftarPasien.add(test);
-    }
-
-    public static void simpanDaftarPasien(File file) {
-        try {
-            FileOutputStream fos = new FileOutputStream(file);
-            for (int i = 0; i < daftarPasien.size(); i++) {
-                String data = daftarPasien.get(i).toString();
-                fos.write(data.getBytes());
-            }
-            fos.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public static void bacaDaftarPasien(File file) {
-        FileInputStream fis = null;
-        try {
-            String hasilBaca = "";
-            fis = new FileInputStream(file);
-            int dataInt;
-            
-            while ((dataInt = fis.read()) != -1) {
-                if ((char) dataInt != '\n') {
-                    hasilBaca = hasilBaca + (char) dataInt;
-                } else {
-                    Pasien temp = new Pasien();
-                    temp.setNama(hasilBaca);
-                    tambahPasienBaru(temp);
-                }
-            }
-            System.out.println(hasilBaca);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fis.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
     
     private String nama;
     private int tanggalLahir;
@@ -173,20 +110,7 @@ public class Pasien {
         this.nik = nik;
     }
 
-    /**
-     * @return the daftarPasien
-     */
-    public static ArrayList<Pasien> getDaftarPasien() {
-        return daftarPasien;
-    }
-
-    /**
-     * @param aDaftarPasien the daftarPasien to set
-     */
-    public static void setDaftarPasien(ArrayList<Pasien> aDaftarPasien) {
-        daftarPasien = aDaftarPasien;
-    }
-
+    
     /**
      * @param tanggalLahir the tanggalLahir to set
      */

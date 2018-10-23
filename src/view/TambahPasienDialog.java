@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import model.Pasien;
+import model.RumahSakit;
 
 /**
  *
@@ -36,6 +37,8 @@ public class TambahPasienDialog extends JDialog implements ActionListener {
     private JTextField noRMText;
     private JButton tambahButton;
 
+    private RumahSakit rs = new RumahSakit();
+    
     public TambahPasienDialog() {
         init();
     }
@@ -123,7 +126,7 @@ public class TambahPasienDialog extends JDialog implements ActionListener {
             Pasien baru = new Pasien();
             baru.setNoRM(noRMText.getText());
             baru.setNama(namaText.getText());
-            Pasien.tambahPasien(baru);
+            rs.tambahPasien(baru);
             this.dispose();
         }
     }

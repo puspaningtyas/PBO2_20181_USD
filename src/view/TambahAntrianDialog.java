@@ -7,6 +7,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import model.Pasien;
+import model.RumahSakit;
 
 /**
  *
@@ -94,7 +95,8 @@ public class TambahAntrianDialog extends javax.swing.JDialog {
 
     private void noRMTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noRMTextActionPerformed
         // TODO add your handling code here:
-        Pasien baru = Pasien.cariPasien(noRMText.getText());
+        
+        Pasien baru = rs.cariPasien(noRMText.getText());
         namaText.setText(baru.getNama());
 //        JOptionPane.showMessageDialog(null, baru.getNama());
     }//GEN-LAST:event_noRMTextActionPerformed
@@ -149,4 +151,6 @@ public class TambahAntrianDialog extends javax.swing.JDialog {
     private javax.swing.JTextField namaText;
     private javax.swing.JTextField noRMText;
     // End of variables declaration//GEN-END:variables
+    private RumahSakit rs = new RumahSakit();
+    
 }

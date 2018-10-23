@@ -7,6 +7,7 @@ package test17oktober;
 
 import java.io.File;
 import model.Pasien;
+import model.RumahSakit;
 
 /**
  *
@@ -14,9 +15,10 @@ import model.Pasien;
  */
 public class TestStream2 {
     public static void main(String[] args) {
-        Pasien.bacaDaftarPasien(new File("daftar.txt"));
-        for (int i = 0; i < Pasien.getDaftarPasien().size(); i++) {
-            System.out.println(Pasien.getDaftarPasien().get(i).toString());
+        RumahSakit rs = new RumahSakit("Panti Rapih","yogyakarta");
+        rs.bacaDaftarPasien(new File("daftar.txt"));
+        for (int i = 0; i < rs.getDaftarPasien().size(); i++) {
+            System.out.println(rs.getDaftarPasien().get(i).toString());
            
         }
     }

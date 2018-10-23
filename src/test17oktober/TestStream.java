@@ -7,6 +7,7 @@ package test17oktober;
 
 import java.io.File;
 import model.Pasien;
+import model.RumahSakit;
 
 /**
  *
@@ -27,9 +28,10 @@ public class TestStream {
         System.out.println(test.toString());
         System.out.println(test1.toString());
         
-        Pasien.tambahPasienBaru(test);
-        Pasien.tambahPasienBaru(test1);
+        RumahSakit rs = new RumahSakit("Panti Rapih","Yogyakarta");
+        rs.tambahPasienBaru(test);
+        rs.tambahPasienBaru(test1);
         
-        Pasien.simpanDaftarPasien(new File("daftar.txt"));
+        rs.simpanDaftarPasien(new File("daftar.txt"));
     }
 }
