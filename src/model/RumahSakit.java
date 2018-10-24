@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 public class RumahSakit {
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
     private ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
+    private ArrayList<AntrianKlinik> daftarAntrianKlinik = new ArrayList<AntrianKlinik>();
     private String nama;
     private String alamat;
 
@@ -142,17 +143,86 @@ public class RumahSakit {
     }
     
     public void tambahKlinik(Klinik klinik){
-        daftarKlinik.add(klinik);
+        getDaftarKlinik().add(klinik);
     }
     
     public Klinik cariKlinik(String namaKlinik){
-        for (int i = 0; i < daftarKlinik.size(); i++) {
-            if(daftarKlinik.get(i).
+        for (int i = 0; i < getDaftarKlinik().size(); i++) {
+            if(getDaftarKlinik().get(i).
                     getNamaKlinik().equalsIgnoreCase(namaKlinik))
             {
-                return daftarKlinik.get(i);
+                return getDaftarKlinik().get(i);
             }
         }
         return null;
+    }
+    
+    public void buatAntrian(
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        AntrianKlinik antrian = new AntrianKlinik();
+        antrian.setTanggalAntrian(tanggal);
+        antrian.setBulanAntrian(bulan);
+        antrian.setTahunAntrian(tahun);
+        antrian.setKlinik(klinik);
+        // cari antrian dalam list daftarAntri
+        if (cariAntrian(tanggal, bulan, tahun, klinik) <0) {
+            // tambah dalam list antrian
+            daftarAntrianKlinik.add(antrian);
+        } else {
+            System.out.println("antrian sudah ada");
+        }
+    }
+
+    public int cariAntrian(
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        return -1; // index list
+    }
+
+    public static void daftarPasien(
+            Pasien pasien,
+            int tanggal,
+            int bulan,
+            int tahun,
+            Klinik klinik) {
+        // cari antrian ada apa tidak
+        // jika ada
+        // panggil fungsi mendaftar dari objek antrian
+        // jika tidak ada
+        // buat antrian baru, panggil gungsi daftar pasien dari objek antrian
+        // tambahkan objek antrian baru ke list daftar antrian
+    }
+
+    /**
+     * @return the daftarAntrianKlinik
+     */
+    public ArrayList<AntrianKlinik> getDaftarAntrianKlinik() {
+        return daftarAntrianKlinik;
+    }
+
+    /**
+     * @param daftarAntrianKlinik the daftarAntrianKlinik to set
+     */
+    public void setDaftarAntrianKlinik(ArrayList<AntrianKlinik> daftarAntrianKlinik) {
+        this.daftarAntrianKlinik = daftarAntrianKlinik;
+    }
+
+    /**
+     * @return the daftarKlinik
+     */
+    public ArrayList<Klinik> getDaftarKlinik() {
+        return daftarKlinik;
+    }
+
+    /**
+     * @param daftarKlinik the daftarKlinik to set
+     */
+    public void setDaftarKlinik(ArrayList<Klinik> daftarKlinik) {
+        this.daftarKlinik = daftarKlinik;
     }
 }
