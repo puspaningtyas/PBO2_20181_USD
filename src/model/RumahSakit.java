@@ -184,7 +184,7 @@ public class RumahSakit {
         return -1; // index list
     }
 
-    public void daftarPasien(
+    public void tambahPasienAntrianKlinik(
             Pasien pasien,
             int tanggal,
             int bulan,
