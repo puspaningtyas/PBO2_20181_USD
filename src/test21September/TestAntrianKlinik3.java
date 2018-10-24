@@ -19,19 +19,19 @@ public class TestAntrianKlinik3 {
     public static void main(String[] args) {
         RumahSakit rs = new RumahSakit("Panti Rapih","yogyakarta");
         
-        rs.buatAntrian(
+        rs.buatAntrianKlinik(
                 21,
                 9,
                 2018,
                 new Klinik("001", "anak"));
 
-        rs.buatAntrian(
+        rs.buatAntrianKlinik(
                 21,
                 9,
                 2018,
                 new Klinik("002", "saraf"));
 
-        rs.buatAntrian(
+        rs.buatAntrianKlinik(
                 21,
                 9,
                 2018,
@@ -48,7 +48,7 @@ public class TestAntrianKlinik3 {
         pasien2.setNama("adi");
         pasien2.setAlamat("klaten");
 
-        int indeksAntrian = rs.cariAntrian(21, 9, 2018, new Klinik("001", "anak"));
+        int indeksAntrian = rs.cariAntrianKlinik(21, 9, 2018, new Klinik("001", "anak"));
         if (indeksAntrian > 0) {
             rs.getDaftarAntrianKlinik().get(indeksAntrian).mendaftar(pasien1);
             rs.getDaftarAntrianKlinik().get(indeksAntrian).mendaftar(pasien2);

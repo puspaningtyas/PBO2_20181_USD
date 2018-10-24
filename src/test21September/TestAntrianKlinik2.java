@@ -16,19 +16,19 @@ import model.RumahSakit;
 public class TestAntrianKlinik2 {
     public static void main(String[] args) {
         RumahSakit rs = new RumahSakit("Panti Rapih","yogyakarta");
-        rs.buatAntrian(
+        rs.buatAntrianKlinik(
                 21, 
                 9, 
                 2018, 
                 new Klinik("001","anak"));
         
-        rs.buatAntrian(
+        rs.buatAntrianKlinik(
                 21, 
                 9, 
                 2018, 
                 new Klinik("002","saraf"));
         
-        rs.buatAntrian(
+        rs.buatAntrianKlinik(
                 21, 
                 9, 
                 2018, 

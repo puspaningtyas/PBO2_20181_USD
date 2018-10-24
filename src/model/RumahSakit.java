@@ -157,7 +157,7 @@ public class RumahSakit {
         return null;
     }
     
-    public void buatAntrian(
+    public void buatAntrianKlinik(
             int tanggal,
             int bulan,
             int tahun,
@@ -168,7 +168,7 @@ public class RumahSakit {
         antrian.setTahunAntrian(tahun);
         antrian.setKlinik(klinik);
         // cari antrian dalam list daftarAntri
-        if (cariAntrian(tanggal, bulan, tahun, klinik) <0) {
+        if (cariAntrianKlinik(tanggal, bulan, tahun, klinik) <0) {
             // tambah dalam list antrian
             daftarAntrianKlinik.add(antrian);
         } else {
@@ -176,7 +176,7 @@ public class RumahSakit {
         }
     }
 
-    public int cariAntrian(
+    public int cariAntrianKlinik(
             int tanggal,
             int bulan,
             int tahun,
