@@ -14,12 +14,14 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author user only
  */
 public class RumahSakit {
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+    private ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
     private String nama;
     private String alamat;
 
@@ -139,4 +141,18 @@ public class RumahSakit {
         this.alamat = alamat;
     }
     
+    public void tambahKlinik(Klinik klinik){
+        daftarKlinik.add(klinik);
+    }
+    
+    public Klinik cariKlinik(String namaKlinik){
+        for (int i = 0; i < daftarKlinik.size(); i++) {
+            if(daftarKlinik.get(i).
+                    getNamaKlinik().equalsIgnoreCase(namaKlinik))
+            {
+                return daftarKlinik.get(i);
+            }
+        }
+        return null;
+    }
 }

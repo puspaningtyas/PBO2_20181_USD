@@ -13,22 +13,7 @@ import java.util.ArrayList;
  */
 public class Klinik {
     
-    public static ArrayList<Klinik> daftarKlinik= new ArrayList<Klinik>();
     
-    public static void tambahKlinik(Klinik klinik){
-        daftarKlinik.add(klinik);
-    }
-    
-    public static Klinik cariKlinik(String namaKlinik){
-        for (int i = 0; i < daftarKlinik.size(); i++) {
-            if(daftarKlinik.get(i).
-                    getNamaKlinik().equalsIgnoreCase(namaKlinik))
-            {
-                return daftarKlinik.get(i);
-            }
-        }
-        return null;
-    }
     private String idKlinik;
     private String namaKlinik;
 
