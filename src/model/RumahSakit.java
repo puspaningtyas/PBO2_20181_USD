@@ -95,10 +95,10 @@ public class RumahSakit {
         }
     }
 
-    public void simpanObjekDaftarPasien(File file) {
+    public void simpanObjekRumahSakit(File file) {
     }
     
-    public void bacaObjekDaftarPasien(File file) {
+    public void bacaObjekRumahSakit(File file) {
     }
     /**
      * @return the daftarPasien
