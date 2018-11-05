@@ -5,6 +5,8 @@
  */
 package modelCanvas;
 
+import java.awt.Color;
+
 /**
  *
  * @author user only
@@ -13,6 +15,15 @@ public class Bola {
     private int posisiX;
     private int posisiY;
     private int diameter;
+    
+    private Color color;
+
+    public Bola(int posisiX, int posisiY, int diameter, Color color) {
+        this.posisiX = posisiX;
+        this.posisiY = posisiY;
+        this.diameter = diameter;
+        this.color = color;
+    }
 
     public Bola() {
     }
@@ -63,6 +74,20 @@ public class Bola {
      */
     public void setDiameter(int diameter) {
         this.diameter = diameter;
+    }
+
+    /**
+     * @return the color
+     */
+    public Color getColor() {
+        return color;
+    }
+
+    /**
+     * @param color the color to set
+     */
+    public void setColor(Color color) {
+        this.color = color;
     }
     
     
