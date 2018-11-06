@@ -7,6 +7,7 @@ package viewCanvas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,9 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import modelCanvas.Bola;
@@ -29,6 +33,10 @@ public class CanvasFrame extends JFrame {
     private JTextField perintahText;
     private JButton okButton;
 
+    private JMenuBar menuBar;
+    private JMenu gameMenu;
+    private JMenuItem exitMenuItem;
+
     public CanvasFrame() {
         init();
     }
@@ -38,10 +46,25 @@ public class CanvasFrame extends JFrame {
         this.setLayout(new BorderLayout());
         this.setTitle("My Game");
 
-        // pnel center
+        // set menu Bar
+        menuBar = new JMenuBar();
+        gameMenu = new JMenu("Game");
+        exitMenuItem = new JMenuItem("Exit");
+        gameMenu.add(exitMenuItem);
+        menuBar.add(gameMenu);
+        setJMenuBar(menuBar);
+        
+        //action perform for exitMenuItem
+        exitMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        }
+        );
+
+        // panel center
         bolaPanel = new BolaPanel();
-        this.add(bolaPanel, BorderLayout.CENTER);
-        bolaPanel.setVisible(true);
 
         // panel selatan
         JPanel southPanel = new JPanel();
@@ -55,8 +78,6 @@ public class CanvasFrame extends JFrame {
 
         this.okButton = new JButton("OK");
         southPanel.add(okButton);
-
-        this.add(southPanel, BorderLayout.SOUTH);
 
         // buat obyek Bola
         Bola bola1 = new Bola(20, 20, 30, Color.RED);
@@ -80,6 +101,12 @@ public class CanvasFrame extends JFrame {
             }
 
         });
+
+        // get contentpane & add bolaPanel and southPanel to container
+        Container cp = this.getContentPane();
+        cp.add(bolaPanel, BorderLayout.CENTER);
+        cp.add(southPanel, BorderLayout.SOUTH);
+
         this.setVisible(true);
     }
 
@@ -87,7 +114,7 @@ public class CanvasFrame extends JFrame {
         ArrayList<Bola> daftarSementara = this.bolaPanel.getListBola();
         for (int i = 0; i < daftarSementara.size(); i++) {
             daftarSementara.get(i).setPosisiX(
-                    daftarSementara.get(i).getPosisiX()+20);
+                    daftarSementara.get(i).getPosisiX() + 20);
         }
         this.bolaPanel.setListBola(daftarSementara);
         this.bolaPanel.gambarUlang();

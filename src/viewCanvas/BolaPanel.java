@@ -22,6 +22,8 @@ public class BolaPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        setBackground(Color.WHITE);
         for (int i = 0; i < listBola.size(); i++) {
             g.setColor(listBola.get(i).getColor());
             g.fillOval(listBola.get(i).getPosisiX(), 
